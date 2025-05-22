@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'locomotive-scroll/dist/locomotive-scroll.css';
+
+body{
+    background-color: rgb(241, 241, 241);
+}
+
+@keyframes scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll var(--animation-duration) linear infinite;
+    animation-direction: var(--animation-direction);
+  }
+  
+
+@theme inline {
+  --shadow-input:
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 0px 0px rgba(25, 28, 33, 0.02),
+    0px 0px 0px 1px rgba(25, 28, 33, 0.08);
+}
+
+
+/* Animation for splash screen logo */
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation for page slide-out */
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Ensure no default margins/padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: rgb(241, 241, 241);
+}
+
+/* Reset data-scroll-container if causing issues */
+.data-scroll-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+}
+
+/* Ensure splash screen content is visible */
+[class*="bg-[#1a1a1a]"] {
+  visibility: visible !important;
+}
+
+/* Ensure logo image is visible */
+[class*="animate-[logoAnimation"] img {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+
+
+[data-scroll-container] {
+  height: 100%;
+  width: 100%;
+}
