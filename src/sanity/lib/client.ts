@@ -1,8 +1,8 @@
-// sanity/lib/client.ts
 import { createClient } from '@sanity/client';
-import { projectId, dataset } from '../env'; // Adjust path to match your project structure
+import type { SanityClient } from '@sanity/client'; // Explicit type import
+import { projectId, dataset } from '../env'; // Adjust path as needed
 
-export const client = createClient({
+export const client: SanityClient = createClient({
   projectId,
   dataset,
   apiVersion: '2024-05-21',
