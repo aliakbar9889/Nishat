@@ -11,6 +11,10 @@ const nextConfig = {
         hostname: 'nishatlinen.com',
         pathname: '/cdn/shop/files/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 };
